@@ -1,0 +1,57 @@
+package com.learning.Swing;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+class Addition extends JFrame {
+	JTextField t1,t2;
+	JButton b;
+	JLabel l;
+	public Addition() {
+		
+		 t1=new JTextField(20);
+		 t2=new JTextField(20);
+		
+		 b=new JButton("ok");	
+		 l= new JLabel("result");
+		
+		add(t1);
+		add(t2);
+		add(b);
+		add(l);
+		//functional interface-onemethod
+		
+		
+		b.addActionListener(ae-> {
+			int num1=Integer.parseInt(t1.getText());
+			int num2=Integer.parseInt(t2.getText());
+			int value=num1+num2;
+			l.setText(value + "");
+		});
+		
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+	public void actionPerformed(ActionEvent ae) {
+		
+		
+	}
+}
+
+public class Add_Lambda{
+
+	public static void main(String[] args) {
+		Addition a=new Addition();
+
+	}
+
+}
